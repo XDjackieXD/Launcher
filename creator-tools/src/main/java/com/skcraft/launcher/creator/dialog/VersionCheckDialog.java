@@ -23,6 +23,7 @@ public class VersionCheckDialog extends JDialog {
     @Getter private final JTable knownModsTable = new DefaultTable();
     @Getter private final JTable unknownModsTable = new DefaultTable();
     @Getter private final JButton closeButton = new JButton("Close");
+    @Getter private final JButton addModFromUrlButton = new JButton("+");
     private final TableColumnAdjuster updateTableAdjuster = new TableColumnAdjuster(knownModsTable);
     private final TableColumnAdjuster unknownTableAdjuster = new TableColumnAdjuster(unknownModsTable);
 
@@ -57,6 +58,7 @@ public class VersionCheckDialog extends JDialog {
         container.add(new JLabel("Unknown Status:"), "span");
         container.add(SwingHelper.wrapScrollPane(unknownModsTable), "grow, pushy, span, w 500:900, h 150, gapbottom unrel, wrap");
 
+        container.add(addModFromUrlButton, "tag add, sizegroup bttn");
         container.add(new JLabel("Version data is sourced from NotEnoughMods.com."), "");
         container.add(closeButton, "tag cancel, sizegroup bttn");
 

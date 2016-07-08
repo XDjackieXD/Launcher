@@ -569,7 +569,7 @@ public class PackManagerController {
                 Pack pack = optional.get();
 
                 VersionCheckDialog dialog = new VersionCheckDialog(frame);
-                VersionCheckController controller = new VersionCheckController(dialog, executor);
+                VersionCheckController controller = new VersionCheckController(dialog, frame, executor);
                     controller.showUpdates(pack.getModsDir(), pack.getCachedConfig().getGameVersion(), frame);
             }
         });
